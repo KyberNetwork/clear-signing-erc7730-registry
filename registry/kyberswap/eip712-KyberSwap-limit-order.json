@@ -1,0 +1,73 @@
+{
+  "$schema": "../../specs/erc7730-v2.schema.json",
+  "context": {
+    "eip712": {
+      "deployments": [
+        { "chainId": 1, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 56, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 42161, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 137, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 10, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 43114, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 8453, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 59144, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 146, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 80094, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 2020, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 130, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 999, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 9745, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 42793, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 143, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 4326, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" },
+        { "chainId": 4153, "address": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C" }
+      ],
+      "domain": { "name": "Kyber DSLO Protocol", "version": "1" }
+    }
+  },
+  "metadata": {
+    "owner": "KyberSwap",
+    "info": { "url": "https://kyberswap.com/" },
+    "contractName": "DSLOProtocol"
+  },
+  "display": {
+    "formats": {
+      "Order(uint256 salt,address makerAsset,address takerAsset,address maker,address receiver,address allowedSender,uint256 makingAmount,uint256 takingAmount,uint256 feeConfig,bytes makerAssetData,bytes takerAssetData,bytes getMakerAmount,bytes getTakerAmount,bytes predicate,bytes interaction)": {
+        "intent": "Sign Limit Order",
+        "fields": [
+          {
+            "path": "makingAmount",
+            "label": "Sell",
+            "format": "tokenAmount",
+            "params": { "tokenPath": "makerAsset" },
+            "visible": "always"
+          },
+          {
+            "path": "takingAmount",
+            "label": "Buy",
+            "format": "tokenAmount",
+            "params": { "tokenPath": "takerAsset" },
+            "visible": "always"
+          },
+          {
+            "path": "receiver",
+            "label": "Beneficiary",
+            "format": "addressName",
+            "params": { "types": ["eoa", "wallet", "contract"], "sources": ["local", "ens"] },
+            "visible": "always"
+          },
+          { "path": "maker", "label": "From", "format": "raw", "visible": "never" },
+          { "path": "salt", "label": "Salt", "visible": "never" },
+          { "path": "allowedSender", "label": "Allowed Sender", "visible": "never" },
+          { "path": "feeConfig", "label": "Fee Config", "visible": "never" },
+          { "path": "makerAssetData", "label": "Maker Asset Data", "visible": "never" },
+          { "path": "takerAssetData", "label": "Taker Asset Data", "visible": "never" },
+          { "path": "getMakerAmount", "label": "Get Maker Amount", "visible": "never" },
+          { "path": "getTakerAmount", "label": "Get Taker Amount", "visible": "never" },
+          { "path": "predicate", "label": "Predicate", "visible": "never" },
+          { "path": "interaction", "label": "Interaction", "visible": "never" }
+        ]
+      }
+    }
+  }
+}

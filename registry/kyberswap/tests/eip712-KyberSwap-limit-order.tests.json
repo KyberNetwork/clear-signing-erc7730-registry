@@ -1,0 +1,67 @@
+{
+  "$schema": "../../../specs/erc7730-tests.schema.json",
+  "tests": [
+    {
+      "description": "KyberSwap limit order - sell 1 token for 0.5 USDT",
+      "data": {
+        "types": {
+          "EIP712Domain": [
+            { "name": "name", "type": "string" },
+            { "name": "version", "type": "string" },
+            { "name": "chainId", "type": "uint256" },
+            { "name": "verifyingContract", "type": "address" }
+          ],
+          "Order": [
+            { "name": "salt", "type": "uint256" },
+            { "name": "makerAsset", "type": "address" },
+            { "name": "takerAsset", "type": "address" },
+            { "name": "maker", "type": "address" },
+            { "name": "receiver", "type": "address" },
+            { "name": "allowedSender", "type": "address" },
+            { "name": "makingAmount", "type": "uint256" },
+            { "name": "takingAmount", "type": "uint256" },
+            { "name": "feeConfig", "type": "uint256" },
+            { "name": "makerAssetData", "type": "bytes" },
+            { "name": "takerAssetData", "type": "bytes" },
+            { "name": "getMakerAmount", "type": "bytes" },
+            { "name": "getTakerAmount", "type": "bytes" },
+            { "name": "predicate", "type": "bytes" },
+            { "name": "interaction", "type": "bytes" }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Kyber DSLO Protocol",
+          "version": "1",
+          "chainId": 1,
+          "verifyingContract": "0xcab2FA2eeab7065B45CBcF6E3936dDE2506b4f6C"
+        },
+        "message": {
+          "salt": "288258337237037949177969327046306132499",
+          "makerAsset": "0xa27ec0006e59f245217ff08cd52a7e8b169e62d2",
+          "takerAsset": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "maker": "0xc366c2ced030a8ed4710e8f6266464cf62e919a7",
+          "receiver": "0xc366c2ced030a8ed4710e8f6266464cf62e919a7",
+          "allowedSender": "0x0000000000000000000000000000000000000000",
+          "makingAmount": "1000000000000000000",
+          "takingAmount": "500000",
+          "feeConfig": "6277101881990774009023666889551657388311693329912920140585",
+          "makerAssetData": "0x",
+          "takerAssetData": "0x",
+          "getMakerAmount": "0xf4a215c30000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000000000000007a120",
+          "getTakerAmount": "0x296637bf0000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000000000000007a120",
+          "predicate": "0x961d5b1e000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000cab2fa2eeab7065b45cbcf6e3936dde2506b4f6c000000000000000000000000cab2fa2eeab7065b45cbcf6e3936dde2506b4f6c0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000044cf6fc6e3000000000000000000000000c366c2ced030a8ed4710e8f6266464cf62e919a7000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002463592c2b000000000000000000000000000000000000000000000000000000012606fb6300000000000000000000000000000000000000000000000000000000",
+          "interaction": "0x"
+        }
+      },
+      "expectedTexts": [
+        "Sell",
+        "1 AZTEC",
+        "Buy",
+        "0.5 USDT",
+        "Beneficiary",
+        "0xc366c2ced030a8ed4 710e8f6266464cf62e 919a7"
+      ]
+    }
+  ]
+}
